@@ -1,13 +1,12 @@
 
-import { useEffect } from "react";
 import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate,
 } from "react-router-dom";
 
-import { supabase } from "./lib/supabase";
-
+import ProtectedRoute from "./components/ProtectedRoute";
 import MainLayout from "./layouts/MainLayout";
 
 import Home from "./pages/Home";
@@ -19,44 +18,57 @@ import Login from "./pages/Login";
 
 import "./App.css";
 
+// Set up navigation for the application.
 function App() {
-  useEffect(() => {
-    async function testSupabase() {
-      const { error } = await supabase.auth.getSession();
-
-      if (error) {
-        console.error(
-          "Supabase Auth error:",
-          error.message
-        );
-      } else {
-        console.log(
-          "Supabase Auth client initialized!"
-        );
-      }
-    }
-
-    testSupabase();
-  }, []);
-
   return (
     <BrowserRouter>
       <Routes>
 
-        {/* Authentication */}
+        {/* Login page */}
         <Route
           path="/login"
           element={<Login />}
         />
 
-        {/* Existing application pages */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/todo" element={<Todo />} />
-          <Route path="/journal" element={<Journal />} />
-          <Route path="/profile" element={<Profile />} />
+        {/* Pages that require a signed-in user */}
+        <Route element={<ProtectedRoute />}>
+
+          {/* Main application layout */}
+          <Route element={<MainLayout />}>
+
+            <Route
+              path="/"
+              element={<Home />}
+            />
+
+            <Route
+              path="/calendar"
+              element={<Calendar />}
+            />
+
+            <Route
+              path="/todo"
+              element={<Todo />}
+            />
+
+            <Route
+              path="/journal"
+              element={<Journal />}
+            />
+
+            <Route
+              path="/profile"
+              element={<Profile />}
+            />
+
+          </Route>
         </Route>
+
+        {/* Redirect unknown pages to Home */}
+        <Route
+          path="*"
+          element={<Navigate to="/" replace />}
+        />
 
       </Routes>
     </BrowserRouter>
