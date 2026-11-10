@@ -1,32 +1,44 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# LYFE CHECK
 
-Currently, two official plugins are available:
+LYFE CHECK is a wellness and productivity web application developed as a Computer Science thesis project at New College of Florida.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About the Project
 
-## React Compiler
+LYFE CHECK is designed to help users manage their daily habits, track their moods, reflect through journaling, and monitor their personal progress in one centralized application.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the Oxlint configuration
+- Dashboard / Home
+- Habit Tracker
+- Mood Tracker
+- Personal Journaling
+- Progress Analytics and Insights
+- Calendar System
+- Reminders and Notifications
+- AI Wellness Assistant (Planned)
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Technologies
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+- React
+- TypeScript
+- Vite
+- HTML
+- CSS
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Running the Application
+
+1. Clone the repository.
+2. Install dependencies:
+
+   npm install
+
+3. Start the development server:
+
+   npm run dev
+
+4. Open the localhost URL displayed in the terminal.
+
+## Project Status
+
+Currently in development.
