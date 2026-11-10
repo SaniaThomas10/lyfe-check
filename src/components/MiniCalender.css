@@ -1,0 +1,464 @@
+
+/* Main mini calendar */
+.mini-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Monthly calendar card */
+.calendar-month-card {
+  width: 100%;
+  padding: 20px 16px;
+  background: #f8f8f8;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+/* Month heading and arrows */
+.calendar-month-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Month heading */
+.calendar-month-header h2 {
+  margin: 0;
+  color: #222222;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Calendar arrow buttons */
+.calendar-nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #444444;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Arrow hover effect */
+.calendar-nav-button:hover {
+  background: #e8e8e8;
+}
+
+/* Weekday headings */
+.calendar-weekday-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+/* Individual weekday heading */
+.calendar-weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 8px 0;
+  color: #777777;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Monthly date grid */
+.calendar-date-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 2px;
+  width: 100%;
+}
+
+/* Individual calendar date */
+.calendar-date-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 4px 0;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  color: #333333;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Calendar day number */
+.calendar-day-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: inherit;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Date hover effect */
+.calendar-date-cell:hover {
+  background: #e8e8e8;
+}
+
+/* Highlights the selected date */
+.calendar-date-cell.selected .calendar-day-number {
+  background: #333333;
+  color: #ffffff;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Highlights today's date */
+.calendar-date-cell.today:not(.selected)
+.calendar-day-number {
+  border: 2px solid #555555;
+  color: #333333;
+}
+
+/* Shows when a date has an event */
+.calendar-event-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #555555;
+}
+
+/* Empty calendar dates */
+.calendar-empty-cell {
+  min-height: 48px;
+}
+
+/* Weekly schedule card */
+.calendar-week-card {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+/* Weekly schedule heading */
+.calendar-week-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 12px;
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Weekly schedule title */
+.calendar-week-header h3 {
+  margin: 0;
+  color: #444444;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Weekly schedule date range */
+.calendar-week-header > span {
+  color: #777777;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* Seven-day weekly layout */
+.calendar-week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  width: 100%;
+  min-height: 115px;
+}
+
+/* Individual weekday */
+.calendar-week-day {
+  min-width: 0;
+  padding: 8px 2px;
+  border-right: 1px solid #dddddd;
+  box-sizing: border-box;
+}
+
+/* Removes the last weekday border */
+.calendar-week-day:last-child {
+  border-right: none;
+}
+
+/* Weekday button */
+.calendar-week-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding: 2px 0;
+  background: transparent;
+  border: none;
+  color: #777777;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+/* Weekday date number */
+.calendar-week-date strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: #333333;
+  font-size: 11px;
+}
+
+/* Highlights the selected weekday */
+.calendar-week-day.active .calendar-week-date {
+  color: #333333;
+}
+
+/* Selected weekday number */
+.calendar-week-day.active .calendar-week-date strong {
+  background: #333333;
+  color: #ffffff;
+}
+
+/* Holds the weekly events */
+.calendar-week-events {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+/* Individual event */
+.calendar-event-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  padding: 5px 3px;
+  border: 1px solid;
+  border-radius: 9px;
+  overflow: hidden;
+  font-size: 9px;
+}
+
+/* Event time and title */
+.event-pill-time,
+.event-pill-title {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Event time */
+.event-pill-time {
+  font-weight: 700;
+}
+
+/* Event title */
+.event-pill-title {
+  color: #333333;
+}
+
+/* First event style */
+.calendar-event-pill.purple {
+  background: #eeeeee;
+  border-color: #cccccc;
+  color: #444444;
+}
+
+/* Second event style */
+.calendar-event-pill.pink {
+  background: #e5e5e5;
+  border-color: #bbbbbb;
+  color: #333333;
+}
+
+/* Third event style */
+.calendar-event-pill.teal {
+  background: #f5f5f5;
+  border-color: #d5d5d5;
+  color: #555555;
+}
+
+/* Event manager card */
+.calendar-event-manager {
+  width: 100%;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+/* Selected date heading */
+.calendar-manager-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Selected date title */
+.calendar-manager-header h3 {
+  margin: 0 0 5px;
+  color: #222222;
+  font-size: 14px;
+}
+
+/* Selected date description */
+.calendar-manager-header p {
+  margin: 0;
+  color: #777777;
+  font-size: 12px;
+}
+
+/* Buttons for adding an event */
+.calendar-add-button,
+.calendar-add-form button {
+  padding: 9px 12px;
+  background: #333333;
+  border: none;
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Changes the button color when hovered */
+.calendar-add-button:hover,
+.calendar-add-form button:hover {
+  background: #555555;
+}
+
+/* Form for adding an event */
+.calendar-add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* Event input fields */
+.calendar-add-form input {
+  width: 100%;
+  padding: 10px;
+  background: #f8f8f8;
+  border: 1px solid #dddddd;
+  border-radius: 9px;
+  color: #222222;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* Events for the selected date */
+.calendar-selected-events {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Individual selected event */
+.calendar-selected-event {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+/* Holds the event details */
+.calendar-selected-event div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+/* Selected event title */
+.calendar-selected-event strong {
+  color: #222222;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+/* Selected event time */
+.calendar-selected-event span {
+  color: #777777;
+  font-size: 11px;
+}
+
+/* Button for deleting an event */
+.calendar-selected-event button {
+  background: transparent;
+  border: none;
+  color: #555555;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Message when there are no events */
+.calendar-no-events {
+  margin: 0;
+  color: #777777;
+  font-size: 12px;
+}
+
+/* Adjusts the calendar for smaller screens */
+@media (max-width: 650px) {
+  .calendar-month-card,
+  .calendar-event-manager {
+    padding: 12px;
+  }
+
+  .calendar-date-cell,
+  .calendar-empty-cell {
+    min-height: 40px;
+  }
+
+  .calendar-day-number {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .calendar-week-day {
+    padding: 6px 1px;
+  }
+
+  .calendar-event-pill {
+    font-size: 8px;
+    padding: 4px 2px;
+  }
+}

@@ -1,0 +1,44 @@
+/* Global font and page settings */
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  background-color: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reset default spacing */
+* {
+  box-sizing: border-box;
+}
+
+/* Main document */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+/* Application container */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Keep buttons and inputs consistent */
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* Default button cursor */
+button {
+  cursor: pointer;
+}

@@ -1,0 +1,122 @@
+
+/* Main quick journal card */
+.quick-journal {
+  width: 100%;
+  padding: 25px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+}
+
+/* Journal heading */
+.quick-journal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* Journal heading text */
+.quick-journal-header h2 {
+  margin: 0 0 8px;
+  font-size: 21px;
+  color: #222222;
+}
+
+/* Journal description */
+.quick-journal-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #666666;
+}
+
+/* Journal icon */
+.journal-icon {
+  color: #555555;
+  font-size: 32px;
+}
+
+/* Form for writing a journal entry */
+.quick-journal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Journal form labels */
+.quick-journal-form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+}
+
+/* Journal input fields */
+.quick-journal-form input,
+.quick-journal-form select,
+.quick-journal-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  color: #222222;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* Journal writing area */
+.quick-journal-form textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* Changes the border when typing */
+.quick-journal-form input:focus,
+.quick-journal-form select:focus,
+.quick-journal-form textarea:focus {
+  outline: 2px solid #999999;
+  border-color: #555555;
+}
+
+/* Button for saving a journal entry */
+.quick-journal-form button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 12px;
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Changes the save button when hovered */
+.quick-journal-form button:hover {
+  background-color: #555555;
+}
+
+/* Disabled save button */
+.quick-journal-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Message shown after saving */
+.journal-message {
+  margin: 15px 0 0;
+  text-align: center;
+  color: #444444;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Adjusts the layout for smaller screens */
+@media (max-width: 600px) {
+  .quick-journal {
+    padding: 18px;
+  }
+}

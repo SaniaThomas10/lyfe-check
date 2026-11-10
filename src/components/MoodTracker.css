@@ -1,0 +1,144 @@
+
+/* Main mood tracker card */
+.mood-tracker {
+  width: 100%;
+  padding: 25px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+}
+
+/* Mood tracker heading */
+.mood-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* Main heading */
+.mood-header h2 {
+  margin: 0 0 8px;
+  font-size: 21px;
+  color: #222222;
+}
+
+/* Mood tracker description */
+.mood-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #666666;
+}
+
+/* Mood tracker icon */
+.mood-heart {
+  color: #555555;
+  font-size: 32px;
+}
+
+/* Holds all the mood options */
+.mood-options {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Individual mood button */
+.mood-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 18px 8px;
+  background-color: #f8f8f8;
+  border: 1px solid #dddddd;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Changes the mood button when hovered */
+.mood-option:hover {
+  background-color: #eeeeee;
+  border-color: #aaaaaa;
+}
+
+/* Highlights the selected mood */
+.mood-option.selected {
+  background-color: #e5e5e5;
+  border: 2px solid #333333;
+}
+
+/* Keeps the mood emojis colorful */
+.mood-emoji {
+  font-size: 32px;
+  filter: none;
+}
+
+/* Mood name */
+.mood-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222222;
+}
+
+/* Button for saving a mood */
+.save-mood-button {
+  width: 100%;
+  padding: 13px 18px;
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Changes the save button when hovered */
+.save-mood-button:hover {
+  background-color: #555555;
+}
+
+/* Disabled save button */
+.save-mood-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Message shown after saving a mood */
+.mood-confirmation {
+  margin: 15px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: #444444;
+  font-weight: 600;
+}
+
+/* Shows which button is selected with the keyboard */
+.mood-option:focus-visible,
+.save-mood-button:focus-visible {
+  outline: 3px solid #555555;
+  outline-offset: 3px;
+}
+
+/* Adjusts the layout for smaller screens */
+@media (max-width: 650px) {
+  .mood-tracker {
+    padding: 18px;
+  }
+
+  .mood-options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 400px) {
+  .mood-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

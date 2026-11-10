@@ -1,0 +1,116 @@
+/* Main Home Dashboard */
+.home-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Welcome section */
+.welcome-section {
+  width: 100%;
+  padding: 28px 32px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+/* Today's date */
+.welcome-date {
+  margin: 0 0 10px;
+  color: #555555;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Welcome heading */
+.welcome-section h1 {
+  margin: 0 0 10px;
+  color: #222222;
+  font-size: 30px;
+}
+
+/* Welcome description */
+.welcome-description {
+  margin: 0;
+  color: #666666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Three-column dashboard layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  width: 100%;
+}
+
+/* Left column: Daily Tasks */
+.dashboard-tasks {
+  min-width: 0;
+}
+
+/* Middle column: Calendar */
+.dashboard-calendar {
+  min-width: 0;
+}
+
+/* Right column: Journal and Mood Tracker */
+.dashboard-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* Ensure dashboard components fit their columns */
+.dashboard-tasks > *,
+.dashboard-calendar > *,
+.dashboard-right > * {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tablet layout */
+@media (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Put Journal and Mood Tracker on their own row */
+  .dashboard-right {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 650px) {
+  .home-page {
+    padding: 16px;
+  }
+
+  .welcome-section {
+    padding: 22px;
+  }
+
+  .welcome-section h1 {
+    font-size: 25px;
+  }
+
+  /* Stack all sections vertically */
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-right {
+    grid-column: auto;
+  }
+}

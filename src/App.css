@@ -1,0 +1,33 @@
+/* Main application layout */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Main page content */
+.main-content {
+  flex: 1;
+  width: 100%;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Make sure images and emojis keep their colors */
+.main-content img {
+  filter: none;
+}
+
+/* Keep buttons using their own component styles */
+.main-content button {
+  font-family: inherit;
+}
+
+/* Make sure the layout fits smaller screens */
+@media (max-width: 768px) {
+  .main-content {
+    width: 100%;
+  }
+}
