@@ -1,0 +1,6 @@
+How to save future changes to GitHub
+Every time you finish working on LYFE CHECK, run these three commands in your VS Code terminal:
+
+git add .
+git commit -m "Describe what you changed"
+git push

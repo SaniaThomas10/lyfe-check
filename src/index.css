@@ -1,44 +1,131 @@
-/* Global font and page settings */
+
+/* ==========================================
+   LYFE CHECK — GLOBAL DARK CHROME THEME
+   ========================================== */
+
 :root {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #333333;
-  background-color: #ffffff;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+
+  color-scheme: dark;
+
+  /* Backgrounds */
+  --lyfe-bg: #100b12;
+  --lyfe-surface: #1c1520;
+  --lyfe-surface-alt: #241b29;
+  --lyfe-surface-hover: #302338;
+
+  /* Brand colors */
+  --lyfe-pink: #d52278;
+  --lyfe-hot-pink: #ed65b3;
+  --lyfe-purple: #8952f5;
+  --lyfe-soft-pink: #f0a5d0;
+
+  /* Typography */
+  --lyfe-text: #fff5fa;
+  --lyfe-muted: #b7a2b5;
+  --lyfe-subtle: #917f94;
+
+  /* Borders */
+  --lyfe-border: rgba(255, 255, 255, 0.11);
+  --lyfe-border-hover: rgba(240, 165, 208, 0.35);
+
+  /* Pink to purple gradient */
+  --lyfe-gradient: linear-gradient(
+    105deg,
+    #d52278 0%,
+    #ae3dc4 60%,
+    #8952f5 100%
+  );
+
+  /* Shadows */
+  --lyfe-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+
+  /* Border radius */
+  --lyfe-radius: 20px;
+
+  background: #100b12;
+  color: var(--lyfe-text);
 }
 
-/* Reset default spacing */
 * {
   box-sizing: border-box;
 }
 
-/* Main document */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+html {
   min-height: 100%;
+  background: #100b12;
 }
 
-/* Application container */
-#root {
-  width: 100%;
+body {
   min-height: 100vh;
+  width: 100%;
   margin: 0;
   padding: 0;
+
+  /* Exact login-page burgundy gradient */
+  background:
+    radial-gradient(
+      ellipse at 10% 70%,
+      rgba(116, 16, 38, 0.65),
+      transparent 54%
+    ),
+    radial-gradient(
+      ellipse at 100% 5%,
+      rgba(88, 51, 135, 0.35),
+      transparent 48%
+    ),
+    #100b12;
+
+  background-attachment: fixed;
+  color: var(--lyfe-text);
 }
 
-/* Keep buttons and inputs consistent */
+#root {
+  min-height: 100vh;
+  width: 100%;
+  background: transparent;
+}
+
 button,
 input,
 textarea,
 select {
-  font-family: inherit;
+  font: inherit;
 }
 
-/* Default button cursor */
 button {
   cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+input,
+textarea,
+select {
+  color: var(--lyfe-text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--lyfe-subtle);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--lyfe-pink);
+}
+
+::selection {
+  background: #ad3c8a;
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--lyfe-hot-pink);
+  outline-offset: 3px;
 }

@@ -1,108 +1,186 @@
 
-/* Main navigation bar */
+/* ==========================================
+   LYFE CHECK — DARK CHROME NAVIGATION
+   ========================================== */
+
 .navbar {
   width: 100%;
-  background-color: #ffffff;
-  border-bottom: 1px solid #dddddd;
+  position: relative;
+  z-index: 10;
+
+  /* Semi-transparent navbar */
+  background: rgba(22, 15, 25, 0.45);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid var(--lyfe-border);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Top section of the navbar */
+/* Top navigation section */
+
 .navbar-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 28px;
+
+  gap: 20px;
+
+  padding: 14px clamp(16px, 4vw, 55px);
 }
 
-/* Logo container */
+/* LYFE CHECK chrome logo */
+
 .navbar-logo {
   display: flex;
   align-items: center;
   text-decoration: none;
 }
 
-/* LYFE CHECK logo */
 .navbar-logo img {
   display: block;
-  width: 150px;
+
+  width: 165px;
+  max-height: 85px;
   height: auto;
+
   object-fit: contain;
   filter: none;
+
+  transition: transform 0.2s ease;
 }
 
-/* Buttons on the right */
+.navbar-logo:hover img {
+  transform: scale(1.04);
+}
+
+/* Right side buttons */
+
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 15px;
 }
 
 /* AI Assistant button */
+
 .navbar-ai-button {
-  background-color: #eeeeee;
-  color: #111111;
-  border: none;
-  border-radius: 16px;
-  padding: 14px 22px;
-  font-size: 15px;
-  font-weight: 600;
+  padding: 12px 21px;
+
+  border: 1px solid rgba(240, 165, 208, 0.3);
+  border-radius: 13px;
+
+  background: linear-gradient(
+    120deg,
+    rgba(213, 34, 120, 0.18),
+    rgba(137, 82, 245, 0.2)
+  );
+
+  color: var(--lyfe-soft-pink);
+
+  font-size: 13px;
+  font-weight: 750;
+
   cursor: pointer;
+
+  transition: 0.2s ease;
 }
 
-/* AI Assistant hover */
 .navbar-ai-button:hover {
-  background-color: #dddddd;
+  border-color: var(--lyfe-hot-pink);
+
+  background: rgba(213, 34, 120, 0.27);
+
+  transform: translateY(-1px);
 }
 
-/* Profile circle */
+/* Profile avatar */
+
 .navbar-profile {
   display: block;
-  width: 50px;
-  height: 50px;
-  background-color: #bcbcbc;
-  border-radius: 50%;
+
+  width: 44px;
+  height: 44px;
+
   flex-shrink: 0;
+
+  border: 2px solid rgba(240, 165, 208, 0.6);
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      #ef9ccf,
+      #ad3ca5 55%,
+      #5c367d
+    );
+
+  box-shadow:
+    0 0 16px rgba(213, 34, 120, 0.15);
+
+  transition: 0.2s ease;
 }
 
-/* Profile hover */
-.navbar-profile:hover {
-  background-color: #999999;
+.navbar-profile:hover,
+.navbar-profile.active {
+  box-shadow:
+    0 0 22px rgba(213, 34, 120, 0.45);
+
+  transform: scale(1.05);
 }
 
 /* Navigation links */
+
 .navbar-links {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 10px 28px 20px;
+
+  flex-wrap: wrap;
+
+  gap: clamp(12px, 4vw, 55px);
+
+  padding: 0 20px 15px;
 }
 
-/* Individual navigation links */
 .navbar-links a {
-  color: #555555;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 400;
-  padding: 12px 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 13px;
+
   border-bottom: 2px solid transparent;
+
+  color: var(--lyfe-muted);
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  transition: 0.2s ease;
 }
 
-/* Active navigation link */
-.navbar-links a.active {
-  color: #111111;
-  border-bottom-color: #111111;
-}
-
-/* Navigation link hover */
 .navbar-links a:hover {
-  color: #000000;
+  color: var(--lyfe-soft-pink);
 }
 
-/* Navbar on smaller screens */
+.navbar-links a.active {
+  color: #ffb4df;
+  border-bottom-color: var(--lyfe-hot-pink);
+}
+
+/* ==========================================
+   RESPONSIVE NAVIGATION
+   ========================================== */
+
 @media (max-width: 650px) {
+
   .navbar-top {
-    padding: 14px 16px;
+    padding: 12px 16px;
   }
 
   .navbar-logo img {
@@ -110,26 +188,26 @@
   }
 
   .navbar-actions {
-    gap: 10px;
+    gap: 9px;
   }
 
   .navbar-ai-button {
     padding: 10px 12px;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .navbar-profile {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .navbar-links {
-    gap: 8px;
-    padding: 8px 12px 14px;
+    gap: 5px;
+    padding: 0 8px 10px;
   }
 
   .navbar-links a {
-    font-size: 14px;
+    padding: 10px 9px;
+    font-size: 12px;
   }
 }
-
